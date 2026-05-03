@@ -27,7 +27,6 @@ dist-ssr
 .env
 .github/Analyse_Codebase_skill.md
 netflix-clone-ux-report.md
-src/components/TitleDetailModal.jsx
 AUTH_INTEGRATION_GUIDE.md
 BACKEND_IMPLEMENTATION.md
 BACKEND_SUMMARY.md
