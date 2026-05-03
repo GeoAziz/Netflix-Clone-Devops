@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.github/Analyse_Codebase_skill.md
+netflix-clone-ux-report.md
+src/components/TitleDetailModal.jsx
+AUTH_INTEGRATION_GUIDE.md
+BACKEND_IMPLEMENTATION.md
+BACKEND_SUMMARY.md
+BACKEND_CHECKLIST.md
+AUTHENTICATION_SECURITY.md
+AUTH_IMPLEMENTATION_SUMMARY.md
+NETFLIX_SPEC_VALIDATION.md
+netflix-clone-backend-architecture.md
+QUICK_REFERENCE.md
