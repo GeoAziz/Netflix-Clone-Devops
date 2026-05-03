@@ -111,6 +111,25 @@
   --transition-slow: 500ms ease-in-out;
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
+  /* EASING CURVES (from CineForge spec) */
+  --ease-standard: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --ease-emphasized: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-linear: linear;
+
+  /* ANIMATION DURATIONS */
+  --duration-micro: 150ms;
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-hover-expand: 300ms;
+  --duration-hover-collapse: 200ms;
+  --duration-modal-open: 400ms;
+  --duration-modal-close: 300ms;
+  --duration-rail-scroll: 750ms;
+  --duration-navbar-scroll: 400ms;
+  --duration-search-expand: 250ms;
+
   /* NAVBAR */
   --navbar-height-desktop: 68px;
   --navbar-height-mobile: 56px;
@@ -274,4 +293,278 @@ html {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
+}
+
+/* ===================================
+   ANIMATION KEYFRAMES (CineForge Spec)
+   =================================== */
+
+/* Skeleton Loader Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 0px,
+    #2a2a2a 40px,
+    #1a1a1a 80px
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.5s infinite var(--ease-linear);
+}
+
+/* Auth Form Shake (Invalid Submit) */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-10px);
+  }
+  40%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.shake {
+  animation: shake 400ms var(--ease-standard);
+}
+
+/* Hover Card Neighbor Shift */
+@keyframes neighborShiftRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--shift-amount));
+  }
+}
+
+@keyframes neighborShiftLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(var(--shift-amount) * -1));
+  }
+}
+
+.neighbor-shift-right {
+  animation: neighborShiftRight var(--duration-hover-expand) var(--ease-standard) forwards;
+}
+
+.neighbor-shift-left {
+  animation: neighborShiftLeft var(--duration-hover-expand) var(--ease-standard) forwards;
+}
+
+/* Progress Bar Expand on Hover */
+@keyframes progressExpand {
+  from {
+    height: 4px;
+  }
+  to {
+    height: 6px;
+  }
+}
+
+.progress-expand:hover {
+  animation: progressExpand var(--duration-micro) var(--ease-standard) forwards;
+}
+
+/* Dropdown Appear */
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-appear {
+  animation: dropdownSlideIn var(--duration-fast) var(--ease-standard);
+}
+
+/* Toast Notification Slide */
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast-slide-up {
+  animation: toastSlideUp var(--duration-base) cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Floating Label Animation */
+@keyframes floatLabel {
+  from {
+    top: 50%;
+    font-size: 16px;
+  }
+  to {
+    top: 8px;
+    font-size: 11px;
+  }
+}
+
+.label-float {
+  animation: floatLabel var(--duration-micro) var(--ease-standard) forwards;
+}
+
+/* Player Controls Fade In/Out */
+@keyframes controlsFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes controlsFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.controls-fade-in {
+  animation: controlsFadeIn var(--duration-base) var(--ease-standard);
+}
+
+.controls-fade-out {
+  animation: controlsFadeOut var(--duration-base) var(--ease-standard);
+}
+
+/* Billboard Video Crossfade */
+@keyframes videoFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.video-fade-in {
+  animation: videoFadeIn var(--duration-slow) var(--ease-standard);
+}
+
+/* Page Fade In */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-fade-in {
+  animation: pageFadeIn var(--duration-base) var(--ease-standard);
+}
+
+/* Profile Card Hover Scale */
+@keyframes profileHover {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.profile-card-hover {
+  animation: profileHover var(--duration-fast) var(--ease-standard);
+}
+
+/* Hover Card Expand (CineForge Core Animation) */
+@keyframes hoverCardExpand {
+  from {
+    transform: scale(1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hover-card-expand {
+  animation: hoverCardExpand var(--duration-hover-expand) var(--ease-standard) forwards;
+}
+
+/* Modal Open Animation */
+@keyframes modalOpen {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-open {
+  animation: modalOpen var(--duration-modal-open) var(--ease-emphasized) forwards;
+}
+
+/* Modal Backdrop Fade */
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+.backdrop-fade {
+  animation: backdropFade var(--duration-modal-open) var(--ease-standard) forwards;
+}
+
+/* Rail Scroll Animation */
+@keyframes railScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--scroll-amount));
+  }
+}
+
+.rail-scroll {
+  animation: railScroll var(--duration-rail-scroll) var(--ease-standard) forwards;
+}
+
+/* Navbar Background Transition */
+@keyframes navbarBgTransition {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.navbar-bg-transition {
+  animation: navbarBgTransition var(--duration-navbar-scroll) var(--ease-standard) forwards;
 }

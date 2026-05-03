@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserAuth } from '../utils/AuthContext';
-import { FaEdit, FaTrash2, FaSave, FaTimes } from 'react-icons/fa';
+import { FaEdit, FaTrash, FaSave, FaTimes } from 'react-icons/fa';
 
 const AVATAR_OPTIONS = [
   '🎬', '🍿', '🎭', '🎪', '👤', '🎮', '📺', '🌟',
@@ -260,7 +260,7 @@ const ManageProfiles = () => {
                           disabled={profiles.length === 1}
                           className="flex-1 bg-red-600 hover:bg-red-700 disabled:bg-gray-700 disabled:cursor-not-allowed px-4 py-3 rounded font-bold transition-colors flex items-center justify-center gap-2"
                         >
-                          <FaTrash2 size={16} />
+                          <FaTrash size={16} />
                           Delete
                         </button>
                       </div>

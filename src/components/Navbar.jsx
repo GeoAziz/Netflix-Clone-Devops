@@ -2,6 +2,7 @@ import { FaRegUserCircle, FaSearch, FaGlobe, FaBars, FaTimes } from 'react-icons
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { UserAuth } from '../utils/AuthContext';
 import { useState, useEffect } from 'react';
+import ExpandableSearch from './ExpandableSearch';
 
 const Navbar = () => {
   const { user, logOut } = UserAuth();
@@ -169,10 +170,8 @@ const Navbar = () => {
 
         {/* Right: Search, Language, Profile */}
         <div className="flex items-center gap-4 md:gap-6">
-          {/* Search */}
-          <Link to="/search" className="text-neutral-300 hover:text-netflix-red transition-colors">
-            <FaSearch className="text-xl" />
-          </Link>
+          {/* Expandable Search */}
+          <ExpandableSearch />
 
           {/* Language Selector */}
           <div className="relative hidden sm:block">

@@ -1,6 +1,7 @@
 import requests from '../Requests';
 import Main from '../components/Main';
 import Row from '../components/Row';
+import DetailModal from '../components/DetailModal';
 
 const Home = () => {
   return (
@@ -32,6 +33,9 @@ const Home = () => {
         title="Documentary"
         fetchURL={requests.requestDocumentary}
       />
+
+      {/* Modal for content details - responds to ?jbv=ID parameter */}
+      <DetailModal />
     </div>
   );
 };

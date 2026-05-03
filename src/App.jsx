@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
+import MobileBottomNav from './components/MobileBottomNav';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthContextProvider, UserAuth } from './utils/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -46,6 +47,7 @@ function AppContent() {
   return (
     <Suspense fallback={<PageLoading />}>
       {user && selectedProfile && <Navbar />}
+      <MobileBottomNav />
       <Routes>
         {/* Public Routes */}
         <Route path="/login" element={<Login />} />
