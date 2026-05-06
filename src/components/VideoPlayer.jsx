@@ -111,7 +111,6 @@ const VideoPlayer = ({ isOpen, onClose, title = 'Video Player' }) => {
       aria-modal="true"
       aria-label={`${title} player`}
     >
-      <KeyboardHandler />
       {/* Close Button */}
       <button
         ref={closeBtnRef}
