@@ -189,10 +189,3 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default ForgotPassword;

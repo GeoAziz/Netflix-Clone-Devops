@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+/* global process */
+/* eslint-disable no-undef */
 /**
  * Load Testing Suite for NetflixReact Clone
  * Tests critical infrastructure limits and bottlenecks

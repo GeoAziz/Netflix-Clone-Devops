@@ -1,3 +1,4 @@
+/* global process */
 /**
  * Register User Script
  * This script creates a new user with the provided credentials

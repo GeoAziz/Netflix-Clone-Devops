@@ -1,3 +1,4 @@
+/* global process */
 /**
  * Manual Subscription Creation Script
  * Creates the subscription document in Firestore for the registered user
