@@ -2,7 +2,7 @@
   "indexes": [
     {
       "collectionGroup": "watchHistory",
-      "queryScope": "Collection",
+      "queryScope": "COLLECTION",
       "fields": [
         {
           "fieldPath": "lastWatched",
@@ -16,7 +16,7 @@
     },
     {
       "collectionGroup": "ratings",
-      "queryScope": "Collection",
+      "queryScope": "COLLECTION",
       "fields": [
         {
           "fieldPath": "rating",
@@ -30,7 +30,7 @@
     },
     {
       "collectionGroup": "notifications",
-      "queryScope": "Collection",
+      "queryScope": "COLLECTION",
       "fields": [
         {
           "fieldPath": "read",
