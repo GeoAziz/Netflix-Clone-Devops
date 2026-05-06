@@ -138,7 +138,7 @@ jobs:
       - name: Deploy Firestore rules
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only firestore:rules,firestore:indexes
+          args: deploy --project netflix-clone-devops-8614a --only firestore:rules,firestore:indexes
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
